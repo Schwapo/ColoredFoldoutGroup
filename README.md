@@ -7,7 +7,7 @@ Examples can be found in the downloaded files.
 
 ![](example.gif)
 
-#### Usage
+### Usage
 Simply put the downloaded ColoredFoldoutGroup folder in your project
 and start using the attribute as in the example file.
 You can move the files, but make sure that `ColoredFoldoutAttribute.cs`
