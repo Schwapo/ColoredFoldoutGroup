@@ -1,8 +1,8 @@
 # ColoredFoldoutGroup
 
-Lets you group class members inside a foldout group with customizable colors, gradients, margin and more.
-
 ### Requires [Odin Inspector]
+
+Lets you group class members inside a foldout group with customizable colors, gradients, margin and more.
 
 ### Examples
 Examples can be found in the downloaded files.
