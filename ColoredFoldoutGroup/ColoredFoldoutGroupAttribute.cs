@@ -18,9 +18,9 @@ public class ColoredFoldoutGroupAttribute : PropertyGroupAttribute
 
     public static Dictionary<string, Texture2D> Gradients = new Dictionary<string, Texture2D>
     {
-        { "LeftToRight", gradientLTR ??= GenerateTexture(32, 1, Base64LTR) },
-        { "RightToLeft", gradientRTL ??= GenerateTexture(32, 1, Base64RTL) },
-        { "Centered" ,   gradientCTR ??= GenerateTexture(32, 1, Base64CTR) },
+        { "LeftToRight", GetGradientTexture(ref gradientLTR, 32, 1, Base64LTR) },
+        { "RightToLeft", GetGradientTexture(ref gradientRTL, 32, 1, Base64RTL) },
+        { "Centered" ,   GetGradientTexture(ref gradientCTR, 32, 1, Base64CTR) },
     };
 
     public bool HasDefinedGradient { get; private set; }
@@ -57,6 +57,16 @@ public class ColoredFoldoutGroupAttribute : PropertyGroupAttribute
 
     public ColoredFoldoutGroupAttribute(string groupName, float order = 0f) : base(groupName, order)
     {
+    }
+
+    public static Texture2D GetGradientTexture(ref Texture2D gradient, int width, int height, string base64)
+    {
+        if (gradient == null)
+        {
+            gradient = GenerateTexture(width, height, base64);
+        }
+
+        return gradient;
     }
 
     public static Texture2D GenerateTexture(int width, int height, string base64)
